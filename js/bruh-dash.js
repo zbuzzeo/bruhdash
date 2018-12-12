@@ -10,37 +10,57 @@ var global = window || GLOBAL;
 global.bruhdash = {
 
   // returns the first element of an array
-  first: function () {
-      
+  first: function ( array ) {
+        return array.shift ( );
+
   },
 
   // returns the last element of an array
-  last: function () {
+  last: function ( array ) {
+        return array.pop ( );
 
   },
 
   // returns the index of the first matching element from left to right
-  indexOf: function () {
+  indexOf: function ( array, element ) {
+        return array.indexOf ( element );
 
   },
 
   // returns the index of the first matching element from right to left
-  lastIndexOf: function () {
+  lastIndexOf: function ( array, element ) {
+        return array.lastIndexOf ( element );
 
   },
 
   // returns an array with all elements except for the last element
-  initial: function () {
+  initial: function ( array ) {
+        array.pop ( );
+        return array;
 
   },
   
   // returns an array with all falsey values removed
-  compact: function() {
+  compact: function ( array ) {
+        console.log ( array );
+        var trutheyArray = [  ];
+        for ( var i = 0; i < array.length; i++ ) {
+                var current = array[i];
+                if ( current ) {
+                        trutheyArray.push ( current );
 
-  },
+                }
+
+        }
+        console.log ( trutheyArray );
+        return trutheyArray;
+
+},
 
   // creates a slice of an array from the start index up to but not including the end index
-  slice: function () {
+  slice: function ( array, start, endNonInclusive ) {
+        array.slice ( start, endNonInclusive );
+        return array;
 
   },
 
